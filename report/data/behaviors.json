@@ -1,0 +1,47 @@
+{
+  "uid" : "b1a8273437954620fa374b796ffaacdd",
+  "name" : "behaviors",
+  "children" : [ {
+    "name" : "login",
+    "children" : [ {
+      "name" : "01. Login to MyFirestone with valid parameters",
+      "uid" : "60b81b23e39eb6a",
+      "parentUid" : "6b74c42bd09fef0af9d6be3f5241dc88",
+      "status" : "passed",
+      "time" : {
+        "start" : 1676418147198,
+        "stop" : 1676418167464,
+        "duration" : 20266
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "6b74c42bd09fef0af9d6be3f5241dc88"
+  }, {
+    "name" : "Onboarding feature",
+    "children" : [ {
+      "name" : "01. Create a new account with profile information in vehicle's info slide",
+      "uid" : "9485a5da25bbabfe",
+      "parentUid" : "00a6bd1a3cbc2a48eff8400514ed2dd0",
+      "status" : "broken",
+      "time" : {
+        "start" : 1676418167465,
+        "stop" : 1676418173991,
+        "duration" : 6526
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "00a6bd1a3cbc2a48eff8400514ed2dd0"
+  } ]
+}

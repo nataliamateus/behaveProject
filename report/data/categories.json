@@ -1,0 +1,30 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "name" : "categories",
+  "children" : [ {
+    "name" : "Test defects",
+    "children" : [ {
+      "name" : "\nYou can implement step definitions for undefined steps with these snippets:\n\n@given(u'I navigate to the create an account button in the menu')\ndef step_impl(context):\n    raise NotImplementedError(u'STEP: Given I navigate to the create an account button in the menu')\n\n",
+      "children" : [ {
+        "name" : "01. Create a new account with profile information in vehicle's info slide",
+        "uid" : "9485a5da25bbabfe",
+        "parentUid" : "b67ff7a272548eaaea69df8a8a3d7a3e",
+        "status" : "broken",
+        "time" : {
+          "start" : 1676418167465,
+          "stop" : 1676418173991,
+          "duration" : 6526
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "b67ff7a272548eaaea69df8a8a3d7a3e"
+    } ],
+    "uid" : "bdbf199525818fae7a8651db9eafe741"
+  } ]
+}

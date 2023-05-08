@@ -1,0 +1,41 @@
+{
+  "cf8edd3def5b3cf8094d308687d0fe87" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "9485a5da25bbabfe",
+      "status" : "broken",
+      "statusDetails" : "\nYou can implement step definitions for undefined steps with these snippets:\n\n@given(u'I navigate to the create an account button in the menu')\ndef step_impl(context):\n    raise NotImplementedError(u'STEP: Given I navigate to the create an account button in the menu')\n\n",
+      "time" : {
+        "start" : 1676418167465,
+        "stop" : 1676418173991,
+        "duration" : 6526
+      }
+    } ]
+  },
+  "c5fb2dbf007322b47a97855396d5f98a" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "60b81b23e39eb6a",
+      "status" : "passed",
+      "time" : {
+        "start" : 1676418147198,
+        "stop" : 1676418167464,
+        "duration" : 20266
+      }
+    } ]
+  }
+}
