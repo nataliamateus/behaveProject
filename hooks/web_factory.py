@@ -1,7 +1,7 @@
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
-from src.test.python.hooks.web import Web
+from hooks.web import Web
 
 
 def get_web(browser):

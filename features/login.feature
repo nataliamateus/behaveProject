@@ -12,7 +12,6 @@ Feature: login
       | <user2>   | <pass2> |
 
 
-  @test
   Scenario Outline: 02. Login with a valid credentials
     Given User fills the "<username>" and "<password>"
     When Click on sign up button

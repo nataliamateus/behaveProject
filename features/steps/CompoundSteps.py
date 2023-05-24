@@ -30,7 +30,7 @@ def verify_login(context):
 
 
 def user_reader(context):
-    with open('src/test/resources/features/users.csv', 'r') as f:
+    with open('data/users.csv', 'r') as f:
         reader = csv.DictReader(f)
         context.users = [row for row in reader]
         f.seek(0)

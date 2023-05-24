@@ -1,3 +1,0 @@
-"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Tue Feb 14 18:42:27 COT 2023","Tue Feb 14 18:42:47 COT 2023","20266","","","","","","01. Login to MyFirestone with valid parameters",""
-"broken","Tue Feb 14 18:42:47 COT 2023","Tue Feb 14 18:42:53 COT 2023","6526","","","","","","01. Create a new account with profile information in vehicle's info slide",""
