@@ -1,23 +1,29 @@
 Feature: login
 
-  @test
   Scenario Outline: 01. Login with a users file
-    Given User enters the "<username>" and "<password>"
+    Given The user data is read from the CSV file
+    And User enters the "<username>" and "<password>"
     When Click on sign up button
     Then User must successfully login to the Dashboard page
 
     Examples: Users
-      | username  | password |
-      | <user1>   | <pass1> |
-      | <user2>   | <pass2> |
+      | username                     | password     |
+      | natalia.mateus+mf@zemoga.com | Tester5678$  |
+      | natalia.mateus+tp@zemoga.com | Tester1234*  |
+      | natalia.mateus@zemoga.com    | Tester5678$  |
+      # Add more rows as needed
 
 
-  Scenario Outline: 02. Login with a valid credentials
-    Given User fills the "<username>" and "<password>"
+  @test
+    Scenario Outline: 02. User enters a username and password from the users list
+    Given User enters a "<username>" and "<password>" from the users list
     When Click on sign up button
     Then User must successfully login to the Dashboard page
 
-  Examples: users
-    | username                          | password    |
-    | natalia.mateus+mfapp@zemoga.com   | Tester1272* |
-    | natalia.mateus+tp@zemoga.com      | Tester1265* |
+    Examples: Users
+      | username                     | password     |
+      | natalia.mateus+mf@zemoga.com | Tester5678$  |
+      | natalia.mateus+tp@zemoga.com | Tester1234*  |
+      | natalia.mateus@zemoga.com    | Tester5678$  |
+      # Add more rows as needed
+
