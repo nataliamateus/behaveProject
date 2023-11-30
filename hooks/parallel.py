@@ -83,7 +83,7 @@ def run_session(cap):
         # Check if the Cart pane is visible
         WebDriverWait(driver, 10).until(EC.visibility_of_element_located(
             (By.CLASS_NAME, "float-cart__content")))
-        ## Get text of product in cart
+        # Get text of product in cart
         item_in_cart = WebDriverWait(driver, 10).until(EC.visibility_of_element_located(
             (By.XPATH, '//*[@id="__next"]/div/div/div[2]/div[2]/div[2]/div/div[3]/p[1]'))).text
         # Verify whether the product (iPhone 12) is added to cart

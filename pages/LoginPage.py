@@ -2,6 +2,7 @@
 class LoginPage:
 
     # Locators
+    cookies_ok_button = "cc-submit__btn"
     sign_in = "a[href='/sign-in']"
     email = "signInEmail"
     password = "password"
@@ -12,6 +13,8 @@ class LoginPage:
         self.web = web
 
     def signIn(self, context, username, passw):
+        ok_button = self.web.find_by_class_name(self.cookies_ok_button)
+        ok_button.click()
         sign_in_label = self.web.find_by_css_selector(self.sign_in)
         sign_in_label.click()
         email = self.web.find_by_id(self.email)

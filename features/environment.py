@@ -8,7 +8,7 @@ def before_all(context):
 
 
 def after_all(context):
-    pass
+    allure_writer(context)
 
 
 def before_feature(context, feature):
@@ -21,7 +21,7 @@ def after_feature(context, feature):
 
 def before_scenario(context, scenario):
     base_url = context.config.userdata.get('base_url', 'https://ix-qa.firestonecompleteautocare.com/')
-    browser = context.config.userdata.get('browser', 'chrome')
+    browser = context.config.userdata.get('browser', 'firefox')
     web = get_web(browser)
     context.web = web
     web.maximize_window()
@@ -30,8 +30,8 @@ def before_scenario(context, scenario):
 
 
 def after_scenario(context, scenario):
-    allure_writer()
-    context.web.close()
+    context.login_page = None  # Reset the login_page instance
+    context.web.close()  # Close the browser after each scenario
 
 
 def before_step(context, step):
