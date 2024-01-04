@@ -4,7 +4,7 @@ run-as: root
 phases:
   install:
     runtime-versions:
-      python: 3.8
+      python: 3.11
     commands:
       - yum install -y firefox
       - pip install -r requirements.txt
