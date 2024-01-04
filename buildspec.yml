@@ -1,0 +1,28 @@
+version: 0.2
+run-as: root
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.8
+    commands:
+      - yum install -y firefox
+      - pip install -r requirements.txt
+#      #- pip install selenium
+#      #- GECKODRIVER_VERSION=$(curl -sS https://api.github.com/repos/mozilla/geckodriver/releases/latest | jq -r .tag_name)
+#      - curl -L https://github.com/mozilla/geckodriver/releases/download/$GECKODRIVER_VERSION/geckodriver-$GECKODRIVER_VERSION-linux64.tar.gz -o geckodriver.tar.gz
+#      - tar -xzvf geckodriver.tar.gz
+#      - mv geckodriver /usr/local/bin/geckodriver
+#      - chmod +x /usr/local/bin/geckodriver
+#      - pip install allure-behave
+  pre_build:
+    commands:
+      - pip install --upgrade pip
+  build:
+    commands:
+      - echo "My First Test"
+      - behave -f allure_behave.formatter:AllureFormatter -o allure-results ./features/
+#  post_build:
+#    commands:
+#      - allure generate allure-results -o allure-report
+#      - aws s3 cp allure-report s3://tu-bucket-allure-reports/$CODEBUILD_RESOLVED_SOURCE_VERSION/ --recursive

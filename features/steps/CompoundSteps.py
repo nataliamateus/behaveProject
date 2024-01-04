@@ -49,7 +49,7 @@ def enter_Credentials(context, username, password):
 @when(u'Click on sign up button')
 def signin_page(context):
     context.login_page.clickOnSignInButton(context)
-    time.sleep(4)  # Let the user actually see something!
+    time.sleep(2)  # Let the user actually see something!
 
 
 @then(u'User must successfully login to the Dashboard page')
