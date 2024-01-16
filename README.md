@@ -4,7 +4,7 @@ This project contains a template for mobile test automation.
 
 ## Project technologies
 
-The project is developed with the **Python** programming language and the **Appium** mobile automation framework.
+The project is developed with the **Python** programming language and the **Selenium** mobile automation framework.
 
 - Python 3.11.6
 
