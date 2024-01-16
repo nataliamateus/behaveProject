@@ -33,20 +33,16 @@ testing-web-template
 | | environment.py
 | └─pages
 | | | base_page.py
-| | └─android
-| | | | *_page.py
-| | └─ios
-| | | | *_page.py
+| | | homee_page.py
+| | | login_page.py
+| | | users_page.py
 | └─steps
 |   | base_steps.py
 |   | click_steps.py
 |   | compound_steps.py
-|   | send_keys_steps.py
-|   | swipe_steps.py
 |   | validation_steps.py
 └─utils
 | | mobile_capabilities.py
-| | mobile_driver.py
 
 ```
 
