@@ -33,7 +33,7 @@ testing-web-template
 | | environment.py
 | └─pages
 | | | base_page.py
-| | | homee_page.py
+| | | home_page.py
 | | | login_page.py
 | | | users_page.py
 | └─steps
