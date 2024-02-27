@@ -1,6 +1,6 @@
 # Testing Web Template PY
 
-This project contains a template for mobile test automation.
+This project contains a template for web test automation.
 
 ## Project technologies
 
