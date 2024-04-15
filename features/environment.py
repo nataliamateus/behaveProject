@@ -1,6 +1,7 @@
+from features.QA_env import BASE_URL_MF
+from features.pages.base_page import allure_writer
+from features.pages.login_page import LoginPage
 from hooks.web_factory import get_web
-from pages.BasePage import allure_writer
-from pages.LoginPage import LoginPage
 
 
 def before_all(context):
@@ -20,8 +21,9 @@ def after_feature(context, feature):
 
 
 def before_scenario(context, scenario):
-    base_url = context.config.userdata.get('base_url', 'https://ix-qa.firestonecompleteautocare.com/')
-    browser = context.config.userdata.get('browser', 'firefox')
+    base_url = context.config.userdata.get('base_url_mf', BASE_URL_MF)
+    print(base_url)
+    browser = context.config.userdata.get('browser', 'chrome')
     web = get_web(browser)
     context.web = web
     web.maximize_window()

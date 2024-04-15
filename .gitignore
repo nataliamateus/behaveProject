@@ -1,4 +1,4 @@
-target/
+target/allure_results
 .DS_Store
 .idea/vcs.xml
 data/.DS_Store

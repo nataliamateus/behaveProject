@@ -2,7 +2,6 @@ from selenium.webdriver.common.by import By
 
 
 class HomePage:
-
     # Menu Locators
     blog = (By.CSS_SELECTOR, "a[href='/blog/'] span")
     schedule_appointment = (By.CSS_SELECTOR, "div.links a[href*='/appointment'] span")

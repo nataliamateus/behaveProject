@@ -8,7 +8,7 @@ class Users:
     def __init__(self):
         self.users_list = [
             User("natalia.mateus+mf@zemoga.com", "Tester5678$"),
-            User("natalia.mateus+tp@zemoga.com", "Tester1234*"),
+            User("natalia.mateus+tp@zemoga.com", "Tester5678$"),
             User("natalia.mateus@zemoga.com", "Tester5678$")
         ]
 
