@@ -4,7 +4,6 @@ Feature: login
   Background:
     Given I allow the cookies
 
-  @test
   Scenario Outline: 01. Login with a users file
     Given The user data is read from the CSV file
     And User enters the "<username>" and "<password>"
@@ -15,7 +14,7 @@ Feature: login
 
     Examples: Users
       | username                     | password     |
-      | natalia.mateus+mf@zemoga.com | Tester5678$  |
+      | natalia.mateus+mf@zemoga.com | Tester1234*  |
       | natalia.mateus+tp@zemoga.com | Tester5678$  |
       | natalia.mateus@zemoga.com    | Tester5678$  |
       # Add more rows as needed
@@ -30,8 +29,8 @@ Feature: login
 
     Examples: Users
       | username                     | password     |
-      | natalia.mateus+mf@zemoga.com | Tester5678$  |
-      | natalia.mateus+tp@zemoga.com | Tester5678$ |
-      | natalia.mateus@zemoga.com    | Tester5678$  |
+      | natalia.mateus+mf@zemoga.com | Tester1234*  |
+      | natalia.mateus+tp@zemoga.com | Tester1234*  |
+      | natalia.mateus@zemoga.com    | Tester1234*  |
       # Add more rows as needed
 

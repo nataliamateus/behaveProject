@@ -4,9 +4,9 @@ run-as: root
 phases:
   install:
     runtime-versions:
-      python: 3.10.5
+      python: 3.10
     commands:
-      - yum install -y firefox
+      - yum install -y chrome
       - pip install -r requirements.txt
 #      #- pip install selenium
 #      #- GECKODRIVER_VERSION=$(curl -sS https://api.github.com/repos/mozilla/geckodriver/releases/latest | jq -r .tag_name)

@@ -9,10 +9,10 @@ def get_web(browser):
     if browser == "chrome":
         # return Web(webdriver.Chrome())
         chrome_options = Options()
-        chrome_options.add_argument("--headless")  # Configuración para ejecutar en modo headless
+        # chrome_options.add_argument("--headless")  # Set up to execute headless mode
         return Web(webdriver.Chrome(options=chrome_options))
 
     elif browser == "firefox":
         firefox_options = Options()
-        firefox_options.add_argument("--headless")  # Configuración para ejecutar en modo headless
+        # firefox_options.add_argument("--headless")  # Set up to execute headless mode
         return Web(webdriver.Firefox(options=firefox_options))
