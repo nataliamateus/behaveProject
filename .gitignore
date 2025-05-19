@@ -1,8 +1,4 @@
-target/allure_results
-.DS_Store
-.idea/vcs.xml
-data/.DS_Store
-__pycache__
-json.pretty.output
-utils/drivers/Google Chrome for Testing.app/
-
+/.venv
+/reports
+/rerun_failing.features
+/features/pages/__pycache__

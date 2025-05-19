@@ -1,41 +1,38 @@
-from selenium.webdriver.common.by import By
+from features.pages.base_page import BasePage
+
+import logging
 
 
-class HomePage:
-    # Menu Locators
-    blog = (By.CSS_SELECTOR, "a[href='/blog/'] span")
-    schedule_appointment = (By.CSS_SELECTOR, "div.links a[href*='/appointment'] span")
-    request_quote = (By.CSS_SELECTOR, "div.links a[href*='/request'] span")
-    contact_us = (By.CSS_SELECTOR, "div.links a[href='/contact/'] span")
-    create_account = (By.CSS_SELECTOR, "a[href='/create-account'] span")
+class HomePage(BasePage):
 
-    # Account
-    create_account_title = (By.CSS_SELECTOR, "")
-    first_name = (By.CSS_SELECTOR, "")
-    last_name = (By.CSS_SELECTOR, "")
-    email = (By.CSS_SELECTOR, "")
-    phone_number = (By.CSS_SELECTOR, "")
-    password = (By.CSS_SELECTOR, "")
+    locators = {
+        "blogButton": ('CSS', "a[href='/blog/'] span"),
+        "scheduleAppointmentButton": ('CSS', "div.links a[href*='/appointment'] span"),
+        "requestQuoteButton": ('CSS', "div.links a[href*='/request'] span"),
+        "contactUsButton": ('CSS', "div.links a[href='/contact/'] span"),
+        "createAccountButton": ('CSS', "a[href='/create-account'] span")
+    }
 
-    def __init__(self, context):
-        context = context
+    def __init__(self, driver):
+        super().__init__(driver)
+        self.logger = logging.getLogger(self.__class__.__name__)
 
-    def clickOnBlogButton(self, context):
-        blog_label = context.browser.find_element(*self.blog)
-        blog_label.click()
+    def clickBlogButton(self):
+        self.blogButton.click_button()
+        self.logger.info(f"Click the blog button")
 
-    def clickOnScheduleAppointmentButton(self, context):
-        schedule_appointment_label = context.browser.find_element(*self.schedule_appointment)
-        schedule_appointment_label.click()
+    def clickScheduleAppointmentButton(self):
+        self.scheduleAppointmentButton.click_button()
+        self.logger.info(f"Click Schedule Appointment button")
 
-    def clickOnRequestAQuoteButton(self, context):
-        request_quote_label = context.browser.find_element(*self.request_quote)
-        request_quote_label.click()
+    def clickRequestAQuoteButton(self):
+        self.requestQuoteButton.click_button()
+        self.logger.info(f"Click request a quote button")
 
-    def clickOnContactUsButton(self, context):
-        contact_us_label = context.browser.find_element(*self.contact_us)
-        contact_us_label.click()
+    def clickContactUsButton(self):
+        self.contactUsButton.click_button()
+        self.logger.info(f"Click contact us button")
 
-    def clickOnCreateAnAccountButton(self, context):
-        create_account_label = context.browser.find_element(*self.create_account)
-        create_account_label.click()
+    def clickCreateAnAccountButton(self):
+        self.createAccountButton.click_button()
+        self.logger.info(f"Click create an account button")

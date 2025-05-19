@@ -1,13 +1,21 @@
-from features.QA_env import BASE_URL_MF
-from utils.helpers.AllureHelper import allure_environment_writer
+from seleniumpagefactory.Pagefactory import PageFactory
+
+import logging
 
 
-def allure_writer(context):
-    base_url_mf = context.config.userdata.get('base_url_mf', BASE_URL_MF)
-    browser = context.config.userdata.get('browser', 'chrome')
-    environment_values = {"APPLICATION NAME": "My Firestone ", "ENVIRONMENT": "QA"}
-    allure_environment_writer(environment_values)
+logging.basicConfig(level=logging.INFO,
+                    format='%(asctime)s.%(msecs)03d %(levelname)s %(name)s.%(funcName)s :: %(message)s',
+                    datefmt='%H:%M:%S')
+
+TIMEOUT = 30
+HIGHLIGHT = False
+MOBILE_TEST = False
 
 
-class BasePage:
-    pass
+class BasePage(PageFactory):
+
+    def __init__(self, driver) -> None:
+        self.driver = driver
+        self.timeout = TIMEOUT
+        self.highlight = HIGHLIGHT
+        self.mobile_test = MOBILE_TEST

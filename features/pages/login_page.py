@@ -1,41 +1,53 @@
-class LoginPage:
-    # Locators
-    cookies_ok_button = "cc-submit__btn"
-    sign_in = "a[href='/account/sign-in']"
-    email = "signInEmail"
-    password = "password"
-    sign_in_button = "button.btn-sign-in"
-    user_label = "desktopMenuApp"
-    user_name_link = "nav-account-toggle"
-    vehicleLabel = "a[href='/account/vehicles']"
+from assertpy import assert_that
 
-    def __init__(self, web):
-        self.web = web
+from features.pages.base_page import BasePage
 
-    def clickOnCookiesButton(self, context):
-        ok_button = self.web.find_by_class_name(self.cookies_ok_button)
-        ok_button.click()
+import logging
 
-    def signIn(self, context, username, passw):
-        sign_in_label = self.web.find_by_css_selector(self.sign_in)
-        sign_in_label.click()
-        email = self.web.find_by_id(self.email)
-        email.send_keys(username)
-        password = self.web.find_by_id(self.password)
-        password.send_keys(passw)
 
-    def clickOnSignInButton(self, context):
-        sign_in_cta = self.web.find_by_css_selector(self.sign_in_button)
-        sign_in_cta.click()
+class LogInPage(BasePage):
+    locators = {
+        "cookiesOkButton": ('CLASS_NAME', "cc-submit__btn"),
+        "signInLabel": ('CSS', "a[href='/account/sign-in']"),
+        "userNameInput": ('ID', "signInEmail"),
+        "passwordInput": ('ID', "password"),
+        "sigInButton": ('CSS', "button.btn-sign-in"),
+        "userLabel": ('CLASS_NAME', "desktopMenuApp"),
+        "userNameLink": ('CLASS_NAME', "nav-account-toggle"),
+        "vehicleLabel": ('CSS', "a[href='/account/vehicles']")
+    }
 
-    def clickOnUserNameLink(self, context):
-        username_cta = self.web.find_by_class_name(self.user_name_link)
-        username_cta.click()
+    def __init__(self, driver):
+        super().__init__(driver)
+        self.logger = logging.getLogger(self.__class__.__name__)
 
-    def verifyLogIn(self, context):
-        user_label_test = self.web.find_by_id(self.user_label)
-        return user_label_test.is_displayed()
+    def clickCookiesButton(self):
+        self.cookiesOkButton.click_button()
+        self.logger.info(f"Click cookies button")
 
-    def verifyVehiclesLabel(self, context):
-        user_vehicles_label_test = self.web.find_by_css_selector(self.vehicleLabel)
-        return user_vehicles_label_test.is_displayed()
+    def clickSignInLabel(self):
+        self.signInLabel.click_button()
+        self.logger.info(f"Click the sign in button")
+
+    def fillUsername(self, username):
+        self.userNameInput.set_text(username)
+        self.logger.info(f"Fill the username: <{username}>")
+
+    def fillPassword(self, password):
+        self.passwordInput.set_text(password)
+        self.logger.info(f"Fill the password: <{password}>")
+
+    def clickSignInButton(self):
+        self.sigInButton.click_button()
+        self.logger.info(f"Click the sign in button")
+
+    def clickUserNameLink(self):
+        self.userNameLink.click_button()
+        self.logger.info(f"Click the user name link")
+
+    def verifyLogIn(self):
+        return self.userNameLink.get_text()
+
+    def verifyVehiclesLabel(self):
+        return self.vehicleLabel.get_text()
+

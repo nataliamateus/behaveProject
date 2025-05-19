@@ -3,6 +3,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
+from allure_commons.types import AttachmentType as aType
+
 
 class Web(object):
     __TIMEOUT = 5
@@ -66,9 +68,9 @@ class Web(object):
     def switch_frame(self, frame):
         return self._web_driver.switch_to.frame(frame)
 
-    def take_screenshot(self):
+    def take_screenshot(self, scenario):
         screenshot = self._web_driver.get_screenshot_as_png()
-        allure.attach(screenshot, name='screenshot', attachment_type=allure.attachment_type.PNG)
+        allure.attach(screenshot, name=scenario.name, attachment_type=aType.PNG)
 
     def close(self):
         self._web_driver.quit()
